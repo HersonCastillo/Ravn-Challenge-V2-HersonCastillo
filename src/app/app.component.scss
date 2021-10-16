@@ -1,6 +1,5 @@
-@import 'styles/component';
+@import "styles/component";
 
-p {
-  color: palette('dark');
-  font-family: font-family("italic");
+h2 {
+  @include text-style("default");
 }

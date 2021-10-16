@@ -1,5 +1,7 @@
-@import './mixins/screen';
-
 @import './values/breakpoints';
 @import './values/colors';
 @import './values/fonts/font';
+
+@import './mixins/screen';
+@import './mixins/common-elements';
+@import './mixins/text-styles';

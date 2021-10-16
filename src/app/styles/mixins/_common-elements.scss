@@ -1,0 +1,55 @@
+@mixin section-header {
+  text-align: left;
+  margin: 22px 1rem 8px 1rem;
+}
+
+@mixin notice-cell {
+  margin: 1rem;
+  text-align: center;
+  color: palette("emphasis");
+}
+
+@mixin loading-cell {
+  margin: 1rem;
+  text-align: center;
+}
+
+@mixin person-cell {
+  margin: 1rem;
+  p {
+    margin: 0;
+
+    &:first-child {
+      font-family: font-family("bold");
+      font-size: 17px;
+      line-height: 20px;
+      letter-spacing: 0.0125em;
+    }
+    &:last-child {
+      font-family: font-family("regular");
+      color: palette("light");
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.0125em;
+    }
+  }
+}
+
+@mixin data-cell {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  margin: 1rem;
+
+  p {
+    &:first-child {
+      color: palette("light");
+      font-family: font-family("bold");
+    }
+    &:last-child {
+      font-family: font-family("bold");
+      color: palette("primary");
+    }
+  }
+}

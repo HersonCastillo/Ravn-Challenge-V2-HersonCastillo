@@ -1,0 +1,30 @@
+$text-styles: (
+  "default": (
+    "color": palette(black),
+    "size": 17px,
+  ),
+  "low-emphasis": (
+    "color": palette(black, 0.3),
+    "size": 17px,
+  ),
+  "high-emphasis": (
+    "color": palette("emphasis"),
+    "size": 17px,
+  ),
+  "small-default": (
+    "color": palette(black),
+    "size": 14px,
+  ),
+  "small-emphasis": (
+    "color": palette(black, 0.5),
+    "size": 14px,
+  ),
+);
+
+@mixin text-style($type) {
+  $font-type: map-get($text-styles, $type);
+
+  color: map-get($font-type, "color");
+  font-size: map-get($font-type, "size");
+  font-family: font-family("regular");
+}
