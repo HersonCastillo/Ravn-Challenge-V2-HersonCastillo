@@ -4,6 +4,7 @@ export const GET_CHARACTERS = gql`
   query GetPeople($first: Int!, $after: String) {
     allPeople(first: $first, after: $after) {
       people {
+        id
         name
         homeworld {
           name

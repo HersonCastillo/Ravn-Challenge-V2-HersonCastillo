@@ -4,6 +4,8 @@ $colors: (
   "light": #828282,
   "emphasis": #ec5757,
   "lightblack": #333333,
+  "lightgray": #ddd,
+  "nowhite": #eee,
 );
 
 @function palette($color-level, $alpha: 1) {

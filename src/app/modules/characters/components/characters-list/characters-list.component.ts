@@ -15,15 +15,16 @@ export class CharactersListComponent {
 
   @Output() retrieveMoreCharacters = new EventEmitter<null>();
 
-  constructor(
-    private starWarsCharacters: StarWarsCharactersService,
-  ) { }
+  selectedCharacterId: string | null = null;
+
+  constructor(private starWarsCharacters: StarWarsCharactersService) {}
 
   requestMoreCharacters(): void {
     this.retrieveMoreCharacters.emit();
   }
 
   onCharacterSelected(character: ICharacter): void {
+    this.selectedCharacterId = character.id;
     this.starWarsCharacters.setCurrentCharacter(character);
   }
 }

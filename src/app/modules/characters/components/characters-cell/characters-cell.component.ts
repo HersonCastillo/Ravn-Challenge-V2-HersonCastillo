@@ -8,6 +8,7 @@ import { ICharacter } from '../../interfaces/character';
 })
 export class CharactersCellComponent {
   @Input() character: ICharacter | null = null;
+  @Input() isSelected: boolean = false;
   @Output() characterSelected = new EventEmitter<ICharacter>();
 
   onCharacterClick(): void {

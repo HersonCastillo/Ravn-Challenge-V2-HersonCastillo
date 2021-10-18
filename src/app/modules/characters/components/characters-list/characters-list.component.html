@@ -6,6 +6,7 @@
   <sw-characters-cell 
     *ngFor="let character of characters"
     [character]="character"
+    [isSelected]="selectedCharacterId === character.id"
     (characterSelected)="onCharacterSelected($event)"
   ></sw-characters-cell>
 
