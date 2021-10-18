@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, throwError } from 'rxjs';
 import { ICharacter } from 'src/app/modules/characters/interfaces/character';
 import { IPageInfo } from '../../interfaces/characters-response';
@@ -10,7 +10,7 @@ import { catchError, takeUntil } from 'rxjs/operators';
   templateUrl: './home-layout.component.html',
   styleUrls: ['./home-layout.component.scss'],
 })
-export class HomeLayoutComponent implements OnInit {
+export class HomeLayoutComponent implements OnInit, OnDestroy {
   getPeople$ = this.starWarsCharacters.getCharacters();
   isLoading = true;
   isError = false;
@@ -42,6 +42,11 @@ export class HomeLayoutComponent implements OnInit {
           this.pagination = pageInfo;
         }
       );
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next(null);
+    this.destroy$.unsubscribe();
   }
 
   retrieveMoreCharacters(): void {
