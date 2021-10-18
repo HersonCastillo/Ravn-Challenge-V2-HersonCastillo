@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { StarWarsCharactersService } from 'src/app/modules/home/services/star-wars-characters.service';
-import { ICharacter } from '../../interfaces/character';
 
 @Component({
   selector: 'sw-character-info',
