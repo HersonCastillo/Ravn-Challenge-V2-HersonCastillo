@@ -5,22 +5,18 @@ import { CharactersCellComponent } from './components/characters-cell/characters
 import { CharacterInfoComponent } from './components/character-info/character-info.component';
 import { ScrollControlDirective } from './directives/scroll-control.directive';
 import { SharedModule } from '../shared/shared.module';
+import { CharacterTraitComponent } from './components/character-trait/character-trait.component';
 
 const components = [
   CharactersListComponent,
   CharactersCellComponent,
   CharacterInfoComponent,
+  CharacterTraitComponent,
 ];
 
 @NgModule({
-  declarations: [
-    ...components,
-    ScrollControlDirective,
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-  ],
+  declarations: [...components, ScrollControlDirective],
+  imports: [CommonModule, SharedModule],
   exports: [...components],
 })
 export class CharactersModule {}

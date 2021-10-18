@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ICharacter } from '../../interfaces/character';
 
 @Component({
@@ -8,4 +8,9 @@ import { ICharacter } from '../../interfaces/character';
 })
 export class CharactersCellComponent {
   @Input() character: ICharacter | null = null;
+  @Output() characterSelected = new EventEmitter<ICharacter>();
+
+  onCharacterClick(): void {
+    this.characterSelected.emit(this.character!);
+  }
 }

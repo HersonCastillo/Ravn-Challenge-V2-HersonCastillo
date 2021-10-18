@@ -1,0 +1,8 @@
+<div class="character-trait__content">
+  <p class="character-trait__content__label" *ngIf="label?.length">
+    {{ label }}
+  </p>
+  <p class="character-trait__content__value" [ngClass]="{ 'only-value': !label?.length }">
+    {{ value }}
+  </p>
+</div>

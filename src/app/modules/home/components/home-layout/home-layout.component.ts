@@ -11,9 +11,9 @@ import { catchError, takeUntil } from 'rxjs/operators';
   styleUrls: ['./home-layout.component.scss'],
 })
 export class HomeLayoutComponent implements OnInit {
+  getPeople$ = this.starWarsCharacters.getCharacters();
   isLoading = true;
   isError = false;
-  getPeople$ = this.starWarsCharacters.getCharacters();
   characters: ICharacter[] = [];
   pagination: IPageInfo | null = null;
 

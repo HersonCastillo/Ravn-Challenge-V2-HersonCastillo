@@ -1,0 +1,14 @@
+@import 'src/app/styles/component';
+
+.character-trait__content {
+  @include data-cell;
+  border-bottom: 1px solid #eee;
+
+  p:last-child {
+    text-transform: capitalize;
+  }
+}
+
+.character-trait__content__value.only-value {
+  color: palette('light') !important;
+}

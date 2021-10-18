@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { StarWarsCharactersService } from 'src/app/modules/home/services/star-wars-characters.service';
+import { ICharacter } from '../../interfaces/character';
 
 @Component({
   selector: 'sw-character-info',
   templateUrl: './character-info.component.html',
-  styleUrls: ['./character-info.component.scss']
+  styleUrls: ['./character-info.component.scss'],
 })
-export class CharacterInfoComponent implements OnInit {
+export class CharacterInfoComponent {
+  character$ = this.starWarsCharacters.currentCharacter$;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  constructor(
+    private starWarsCharacters: StarWarsCharactersService,
+  ) { }
 }

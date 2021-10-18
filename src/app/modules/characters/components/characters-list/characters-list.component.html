@@ -6,11 +6,12 @@
   <sw-characters-cell 
     *ngFor="let character of characters"
     [character]="character"
+    (characterSelected)="onCharacterSelected($event)"
   ></sw-characters-cell>
 
   <sw-button *ngIf="!isLoading && canLoadMore" (click)="requestMoreCharacters()">
     Get more characters
   </sw-button>
   <sw-loading-bar *ngIf="isLoading && !isError"></sw-loading-bar>
-  <sw-warning>Failed to Load Data</sw-warning>
+  <sw-warning *ngIf="isError">Failed to Load Data</sw-warning>
 </div>

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { StarWarsCharactersService } from 'src/app/modules/home/services/star-wars-characters.service';
 import { ICharacter } from '../../interfaces/character';
 
 @Component({
@@ -7,14 +8,22 @@ import { ICharacter } from '../../interfaces/character';
   styleUrls: ['./characters-list.component.scss'],
 })
 export class CharactersListComponent {
-  @Output() retrieveMoreCharacters = new EventEmitter<null>();
-
   @Input() characters: ICharacter[] = [];
   @Input() isLoading: boolean = false;
   @Input() isError: boolean = false;
   @Input() canLoadMore: boolean = true;
 
+  @Output() retrieveMoreCharacters = new EventEmitter<null>();
+
+  constructor(
+    private starWarsCharacters: StarWarsCharactersService,
+  ) { }
+
   requestMoreCharacters(): void {
     this.retrieveMoreCharacters.emit();
+  }
+
+  onCharacterSelected(character: ICharacter): void {
+    this.starWarsCharacters.setCurrentCharacter(character);
   }
 }

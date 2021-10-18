@@ -1,1 +1,20 @@
-<p>character-info works!</p>
+<div class="character-info__container" *ngIf="character$ | async as character">
+  <div class="character-info__content__heading">
+    <h2>General Information</h2>
+  </div>
+  <div class="character-info__content__traits">
+    <sw-character-trait label="Eye Color" [value]="character.eyeColor"></sw-character-trait>
+    <sw-character-trait label="Hair Color" [value]="character.hairColor"></sw-character-trait>
+    <sw-character-trait label="Skin Color" [value]="character.skinColor"></sw-character-trait>
+    <sw-character-trait label="Birth Year" [value]="character.birthYear"></sw-character-trait>
+  </div>
+  <div *ngIf="character.vehicleConnection?.vehicles?.length">
+    <div class="character-info__content__heading">
+      <h2>Vehicles</h2>
+    </div>
+    <div class="character-info__content__traits">
+      <sw-character-trait *ngFor="let vehicle of (character.vehicleConnection?.vehicles ?? [])" [value]="vehicle.name">
+      </sw-character-trait>
+    </div>
+  </div>
+</div>
