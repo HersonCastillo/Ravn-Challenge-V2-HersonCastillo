@@ -22,7 +22,7 @@
     ],
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "styles": ["src/app/styles/*"]
+      "styles/*": ["src/app/styles/*"]
     }
   },
   "angularCompilerOptions": {
