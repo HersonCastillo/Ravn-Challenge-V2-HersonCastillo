@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { StarWarsCharactersService } from 'src/app/modules/home/services/star-wars-characters.service';
 
 import { CharacterInfoComponent } from './character-info.component';
 
@@ -8,9 +9,9 @@ describe('CharacterInfoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CharacterInfoComponent ]
-    })
-    .compileComponents();
+      declarations: [CharacterInfoComponent],
+      providers: [StarWarsCharactersService],
+    }).compileComponents();
   });
 
   beforeEach(() => {
