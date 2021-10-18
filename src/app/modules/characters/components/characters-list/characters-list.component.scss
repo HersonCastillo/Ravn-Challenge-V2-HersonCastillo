@@ -1,0 +1,15 @@
+@import 'src/app/styles/component';
+
+.characters-list__container {
+  display: flex;
+  flex-direction: column;
+
+  height: calc(100vh - #{get-var('nav', 'height')});;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  sw-button {
+    margin: 1rem 0;
+    align-self: center;
+  }
+}

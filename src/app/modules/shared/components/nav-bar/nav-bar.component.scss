@@ -6,7 +6,7 @@
 
   padding-left: 33px;
 
-  height: 52px;
+  height: get-var('nav', 'height');
   background-color: palette("primary");
   box-shadow: 0 0 10px palette(black, 0.25);
 

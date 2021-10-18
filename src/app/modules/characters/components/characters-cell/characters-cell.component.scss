@@ -1,0 +1,21 @@
+@import "src/app/styles/component";
+
+.character-cell__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 24px;
+
+  border-bottom: 1px solid #ddd;
+
+  cursor: pointer;
+}
+
+.character-cell__content {
+  @include person-cell;
+}
+
+.character-cell__arrow {
+  font-family: font-family('bold');
+  transform: scale(1.5);
+}

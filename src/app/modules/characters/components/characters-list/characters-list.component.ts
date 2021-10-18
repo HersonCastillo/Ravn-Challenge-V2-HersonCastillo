@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ICharacter } from '../../interfaces/character';
 
 @Component({
@@ -7,5 +7,11 @@ import { ICharacter } from '../../interfaces/character';
   styleUrls: ['./characters-list.component.scss'],
 })
 export class CharactersListComponent {
+  @Output() retrieveMoreCharacters = new EventEmitter<null>();
+
   @Input() characters: ICharacter[] = [];
+
+  requestMoreCharacters(): void {
+    this.retrieveMoreCharacters.emit();
+  }
 }

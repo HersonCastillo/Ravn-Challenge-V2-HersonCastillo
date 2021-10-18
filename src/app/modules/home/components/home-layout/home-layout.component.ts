@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { QueryRef } from 'apollo-angular';
 import { ICharacter } from 'src/app/modules/characters/interfaces/character';
-import { ICharactersRequestVariables } from '../../interfaces/characters-request-variables';
-import {
-  ICharactersResponse,
-  IPageInfo,
-} from '../../interfaces/characters-response';
+import { IPageInfo } from '../../interfaces/characters-response';
 import { StarWarsCharactersService } from '../../services/star-wars-characters.service';
 
 @Component({
@@ -14,16 +9,32 @@ import { StarWarsCharactersService } from '../../services/star-wars-characters.s
   styleUrls: ['./home-layout.component.scss'],
 })
 export class HomeLayoutComponent implements OnInit {
-  getPeople$ = this.starWarsCharacters.getCharacters().valueChanges;
+  isLoading = true;
+  getPeople$ = this.starWarsCharacters.getCharacters();
   characters: ICharacter[] = [];
   pagination: IPageInfo | null = null;
 
-  constructor(private starWarsCharacters: StarWarsCharactersService) { }
+  constructor(private starWarsCharacters: StarWarsCharactersService) {}
 
   ngOnInit(): void {
-    this.getPeople$.subscribe(({ data: { allPeople, pageInfo } }) => {
-      this.characters = allPeople.people;
-      this.pagination = pageInfo;
-    });
+    this.getPeople$.valueChanges.subscribe(
+      ({
+        data: {
+          allPeople: { people, pageInfo },
+        },
+      }) => {
+        this.characters = people;
+        this.pagination = pageInfo;
+      }
+    );
+  }
+
+  retrieveMoreCharacters(): void {
+    if (this.pagination?.hasNextPage) {
+      this.starWarsCharacters.requestMoreCharacters(
+        this.getPeople$,
+        this.pagination.endCursor
+      );
+    }
   }
 }

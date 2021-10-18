@@ -4,7 +4,11 @@
   display: flex;
 
   &__first-side {
-    max-width: get-var('layout', 'left-side');
     width: 100%;
+    max-width: get-var('layout', 'left-side');
+    height: calc(100vh - #{get-var('nav', 'height')});
+    border-right: 1px solid #eee;
+
+    overflow-y: hidden;
   }
 }

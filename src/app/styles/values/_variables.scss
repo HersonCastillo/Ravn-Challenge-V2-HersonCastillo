@@ -3,6 +3,9 @@ $variables: (
     "left-side": 370px,
     "padding": 1rem,
   ),
+  "nav": (
+    "height": 52px,
+  )
 );
 
 @function get-var($from, $key) {

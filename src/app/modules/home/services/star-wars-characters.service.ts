@@ -20,4 +20,28 @@ export class StarWarsCharactersService {
       variables: { first, after },
     });
   }
+
+  requestMoreCharacters(
+    reference: QueryRef<ICharactersResponse, ICharactersRequestVariables>,
+    after: string
+  ) {
+    reference.fetchMore({
+      variables: {
+        ...reference.variables,
+        after,
+      },
+      updateQuery: (prev, { fetchMoreResult }) => {
+        return {
+          allPeople: {
+            pageInfo:
+              fetchMoreResult?.allPeople.pageInfo ?? prev.allPeople.pageInfo,
+            people: [
+              ...prev.allPeople.people,
+              ...(fetchMoreResult?.allPeople.people ?? []),
+            ],
+          },
+        };
+      },
+    });
+  }
 }

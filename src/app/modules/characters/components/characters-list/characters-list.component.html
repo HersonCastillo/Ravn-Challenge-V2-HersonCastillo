@@ -1,3 +1,14 @@
-<div class="characters-list__container">
-  <sw-characters-cell *ngFor="let character of characters"></sw-characters-cell>
+<div 
+  class="characters-list__container" 
+  swScrollControl 
+  (triggerRequest)="requestMoreCharacters()"
+>
+  <sw-characters-cell 
+    *ngFor="let character of characters"
+    [character]="character"
+  ></sw-characters-cell>
+
+  <sw-button (click)="requestMoreCharacters()">
+    Get more characters
+  </sw-button>
 </div>

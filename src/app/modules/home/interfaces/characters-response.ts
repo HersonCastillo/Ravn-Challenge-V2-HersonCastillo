@@ -3,8 +3,8 @@ import { ICharacter } from '../../characters/interfaces/character';
 export interface ICharactersResponse {
   allPeople: {
     people: ICharacter[];
+    pageInfo: IPageInfo;
   };
-  pageInfo: IPageInfo;
 }
 
 export interface IPageInfo {

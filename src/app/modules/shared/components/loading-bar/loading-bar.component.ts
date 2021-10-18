@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'sw-loading-bar',
-  templateUrl: './loading-bar.component.html',
-  styleUrls: ['./loading-bar.component.scss']
+  styleUrls: ['./loading-bar.component.scss'],
+  template: `
+    <div class="loading-bar">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  `,
 })
-export class LoadingBarComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class LoadingBarComponent { }

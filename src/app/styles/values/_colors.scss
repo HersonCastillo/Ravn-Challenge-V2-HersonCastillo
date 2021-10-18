@@ -3,6 +3,7 @@ $colors: (
   "dark": #133333,
   "light": #828282,
   "emphasis": #ec5757,
+  "lightblack": #333333,
 );
 
 @function palette($color-level, $alpha: 1) {
