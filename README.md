@@ -1,27 +1,161 @@
-# RavnCodeChallenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
+# Star Wars Characters Platform | Ravn
 
-## Development server
+Welcome to my code challenge about Star Wars! \
+I hope you're a real fan and *May the 4th be with you*!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![Demo](https://media2.giphy.com/media/zfN5r6xl3hT4wvjchF/giphy.gif)
 
-## Code scaffolding
+# Online demo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+You also can visit: https://ravn-star-wars-cc.herokuapp.com and test the site!
 
-## Build
+## Run Locally
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Clone the project
 
-## Running unit tests
+```bash
+  git clone https://github.com/HersonCastillo/Ravn-Challenge-V2-HersonCastillo
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Go to the project directory
 
-## Running end-to-end tests
+```bash
+  cd Ravn-Challenge-V2-HersonCastillo
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Install dependencies
 
-## Further help
+```bash
+  npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Start the server
+
+```bash
+  npm run start:dev
+```
+
+Run tests
+
+```bash
+  npm run test
+```
+
+# Application Structure
+- Tecnologies: **Angular v12**.
+- Relevant packages: **Apollo Angular**.
+- Folder structure:
+
+```
+- modules/
+    - home/
+        - interfaces/
+        - services/
+        - components/
+    - characters/
+        - interfaces/
+        - components/
+        - directives/
+    - shared/
+        - components/
+- styles/
+    - mixins/
+    - values/
+- app.component.ts
+- app.component.html
+- ...
+```
+
+# Data
+
+For this example I'm using the GraphQL platform about this topic. Follow the next link to see more information.
+
+    https://swapi-graphql.netlify.app
+
+
+Currently I'm consuming the data with the following structure. \
+(I'll use some static data for example purposes).
+
+```
+{
+  allPeople(first: 1, after: "YXJyYXljb25uZWN0aW9uOjk=") {
+    people {
+      name
+      homeworld {
+        name
+      }
+      species {
+        name
+      }
+      eyeColor
+      skinColor
+      hairColor
+      birthYear
+      vehicleConnection {
+        vehicles {
+          name
+        }
+      }
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      endCursor
+    }
+  }
+}
+```
+
+And here their respective result.
+
+```
+{
+  "data": {
+    "allPeople": {
+      "people": [
+        {
+          "name": "Anakin Skywalker",
+          "homeworld": {
+            "name": "Tatooine"
+          },
+          "species": null,
+          "eyeColor": "blue",
+          "skinColor": "fair",
+          "hairColor": "blond",
+          "birthYear": "41.9BBY",
+          "vehicleConnection": {
+            "vehicles": [
+              {
+                "name": "Zephyr-G swoop bike"
+              },
+              {
+                "name": "XJ-6 airspeeder"
+              }
+            ]
+          }
+        }
+      ],
+      "pageInfo": {
+        "hasNextPage": true,
+        "hasPreviousPage": false,
+        "endCursor": "YXJyYXljb25uZWN0aW9uOjEw"
+      }
+    }
+  }
+}
+```
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your environments/environment files.
+
+`GRAPHQL_ENDPOINT='https://swapi-graphql.netlify.app/.netlify/functions/index'`
+
+## 🚀 Thanks
+Great to see you here! \
+Feel free to come back again!
+
+## Authors
+
+- [@HersonCastillo](https://www.github.com/HersonCastillo)
