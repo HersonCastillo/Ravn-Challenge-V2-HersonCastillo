@@ -11,6 +11,15 @@ export const GET_CHARACTERS = gql`
         species {
           name
         }
+        eyeColor
+        skinColor
+        hairColor
+        birthYear
+        vehicleConnection {
+          vehicles {
+            name
+          }
+        }
       }
       pageInfo {
         hasNextPage

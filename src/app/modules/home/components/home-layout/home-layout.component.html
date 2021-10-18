@@ -4,7 +4,10 @@
   <sw-characters-list
     first
     [characters]="characters"
+    [isLoading]="isLoading"
+    [isError]="isError"
+    [canLoadMore]="pagination?.hasNextPage || false"
     (retrieveMoreCharacters)="retrieveMoreCharacters()"
   ></sw-characters-list>
-  <sw-character-info last></sw-character-info>
+  <sw-character-info last *ngIf="!isError"></sw-character-info>
 </sw-grid-layout-separation>

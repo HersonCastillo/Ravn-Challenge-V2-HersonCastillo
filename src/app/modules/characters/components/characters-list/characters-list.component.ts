@@ -10,6 +10,9 @@ export class CharactersListComponent {
   @Output() retrieveMoreCharacters = new EventEmitter<null>();
 
   @Input() characters: ICharacter[] = [];
+  @Input() isLoading: boolean = false;
+  @Input() isError: boolean = false;
+  @Input() canLoadMore: boolean = true;
 
   requestMoreCharacters(): void {
     this.retrieveMoreCharacters.emit();

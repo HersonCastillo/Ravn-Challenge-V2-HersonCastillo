@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   GRAPHQL_ENDPOINT:
-    'https://swapi-graphql.netlify.app/.netlify/functions/index',
+    'https://swapi-graphql.netlify.app/.netlify/functions/index0',
 };
 
 /*

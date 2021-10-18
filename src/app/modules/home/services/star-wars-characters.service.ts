@@ -30,13 +30,14 @@ export class StarWarsCharactersService {
         ...reference.variables,
         after,
       },
-      updateQuery: (prev, { fetchMoreResult }) => {
+      updateQuery: (previous, { fetchMoreResult }) => {
         return {
           allPeople: {
             pageInfo:
-              fetchMoreResult?.allPeople.pageInfo ?? prev.allPeople.pageInfo,
+              fetchMoreResult?.allPeople.pageInfo ??
+              previous.allPeople.pageInfo,
             people: [
-              ...prev.allPeople.people,
+              ...previous.allPeople.people,
               ...(fetchMoreResult?.allPeople.people ?? []),
             ],
           },

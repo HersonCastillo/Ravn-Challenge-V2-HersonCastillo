@@ -5,7 +5,11 @@ $variables: (
   ),
   "nav": (
     "height": 52px,
-  )
+  ),
+  "loading-bar": (
+    "width": 20px,
+    "height": 20px,
+  ),
 );
 
 @function get-var($from, $key) {

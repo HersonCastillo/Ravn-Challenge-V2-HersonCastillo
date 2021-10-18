@@ -8,7 +8,9 @@
     [character]="character"
   ></sw-characters-cell>
 
-  <sw-button (click)="requestMoreCharacters()">
+  <sw-button *ngIf="!isLoading && canLoadMore" (click)="requestMoreCharacters()">
     Get more characters
   </sw-button>
+  <sw-loading-bar *ngIf="isLoading && !isError"></sw-loading-bar>
+  <sw-warning>Failed to Load Data</sw-warning>
 </div>
