@@ -1,0 +1,11 @@
+$variables: (
+  "layout": (
+    "left-side": 370px,
+    "padding": 1rem,
+  ),
+);
+
+@function get-var($from, $key) {
+  $group: map-get($variables, $from);
+  @return map-get($group, $key);
+}

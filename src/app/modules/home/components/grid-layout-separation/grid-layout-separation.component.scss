@@ -1,0 +1,10 @@
+@import 'src/app/styles/component';
+
+.grid-layout-separation__container {
+  display: flex;
+
+  &__first-side {
+    max-width: get-var('layout', 'left-side');
+    width: 100%;
+  }
+}
