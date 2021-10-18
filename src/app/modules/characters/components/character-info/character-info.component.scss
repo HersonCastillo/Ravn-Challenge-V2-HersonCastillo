@@ -1,0 +1,21 @@
+@import "src/app/styles/component";
+
+.character-info__container {
+  max-width: get-var("layout", "right-side");
+  width: 100%;
+
+  margin: 0 auto;
+}
+
+.character-info__content {
+  &__heading {
+    margin-top: 33px;
+  }
+
+  &__heading h2 {
+    @include section-header;
+    font-size: 17px;
+    letter-spacing: 0.0125em;
+    line-height: 20px;
+  }
+}

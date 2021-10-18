@@ -1,0 +1,17 @@
+$colors: (
+  "primary": #121212,
+  "dark": #133333,
+  "light": #828282,
+  "emphasis": #ec5757,
+  "lightblack": #333333,
+  "lightgray": #ddd,
+  "nowhite": #eee,
+);
+
+@function palette($color-level, $alpha: 1) {
+  @if map-has-key($colors, $color-level) {
+    @return rgba(map-get($colors, $color-level), $alpha);
+  }
+  // Thinking that $color-level value is a real color.
+  @return rgba($color-level, $alpha);
+}

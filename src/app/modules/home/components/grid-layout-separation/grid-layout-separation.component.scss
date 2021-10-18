@@ -1,0 +1,31 @@
+@import "src/app/styles/component";
+
+.grid-layout-separation__container {
+  display: flex;
+
+  &__first-side {
+    width: 100%;
+    order: 1;
+    max-width: get-var("layout", "left-side");
+    height: calc(100vh - #{get-var("nav", "height")});
+    border-right: 1px solid palette("nowhite");
+
+    overflow-y: hidden;
+  }
+
+  &__last-side {
+    width: 100%;
+    order: 2;
+  }
+
+  @include max-screen(breakpoint("md", "max")) {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+
+    &__first-side {
+      max-width: unset;
+      overflow: hidden;
+      border-right: none;
+    }
+  }
+}

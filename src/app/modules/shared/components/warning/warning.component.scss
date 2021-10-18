@@ -1,0 +1,6 @@
+@import "src/app/styles/component";
+
+.warning-message {
+  @include notice-cell;
+  font-family: font-family("bold");
+}

@@ -1,0 +1,26 @@
+@import "src/app/styles/component";
+
+.nav-bar__container {
+  display: flex;
+  align-items: center;
+
+  padding-left: 33px;
+
+  height: get-var('nav', 'height');
+  background-color: palette("primary");
+  box-shadow: 0 0 10px palette(black, 0.25);
+
+  &__blurb {
+    @include text-style("default");
+    font-weight: bold;
+    color: white;
+    letter-spacing: 0.0125em;
+    line-height: 20px;
+  }
+
+  @include max-screen(breakpoint("sm")) {
+    &__blurb {
+      font-size: 14px;
+    }
+  }
+}

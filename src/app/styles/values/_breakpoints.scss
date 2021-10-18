@@ -1,0 +1,23 @@
+$breakpoint-values: (
+  "sm": (
+    "min": 0,
+    "max": 380px,
+  ),
+  "md": (
+    "min": 379px,
+    "max": 680px,
+  ),
+  "lg": (
+    "min": 679px,
+    "max": 1190px,
+  ),
+  "xl": (
+    "min": 1189px,
+    "max": 1380px,
+  ),
+);
+
+@function breakpoint($value, $level: "max") {
+  $point: map-get($breakpoint-values, $value);
+  @return map-get($point, $level);
+}

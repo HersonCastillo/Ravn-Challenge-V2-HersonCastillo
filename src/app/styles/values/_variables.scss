@@ -1,0 +1,19 @@
+$variables: (
+  "layout": (
+    "left-side": 370px,
+    "right-side": 800px,
+    "padding": 1rem,
+  ),
+  "nav": (
+    "height": 52px,
+  ),
+  "loading-bar": (
+    "width": 20px,
+    "height": 20px,
+  ),
+);
+
+@function get-var($from, $key) {
+  $group: map-get($variables, $from);
+  @return map-get($group, $key);
+}

@@ -1,0 +1,30 @@
+@import "src/app/styles/component";
+
+.character-cell__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 24px;
+
+  border-bottom: 1px solid palette("lightgray");
+
+  cursor: pointer;
+  transition: opacity 0.1s ease-in-out;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &.is-selected {
+    background-color: palette("nowhite");
+  }
+}
+
+.character-cell__content {
+  @include person-cell;
+}
+
+.character-cell__arrow {
+  font-family: font-family("bold");
+  transform: scale(1.5);
+}
