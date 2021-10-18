@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeModule } from './modules/home/home.module';
 
 @NgModule({
   declarations: [
@@ -12,9 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    HomeModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
