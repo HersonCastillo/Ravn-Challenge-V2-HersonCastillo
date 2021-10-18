@@ -6,13 +6,41 @@ I hope you're a real fan and *May the 4th be with you*!
 
 ![Demo](https://media2.giphy.com/media/zfN5r6xl3hT4wvjchF/giphy.gif)
 
-# Usage
+# Online demo
 
-You only need to run the follow command in the projects root.
+You also can visit: https://ravn-star-wars-cc.herokuapp.com and test the site!
 
-    ng serve
+## Run Locally
 
-And that's it! enjoy it.
+Clone the project
+
+```bash
+  git clone https://github.com/HersonCastillo/Ravn-Challenge-V2-HersonCastillo
+```
+
+Go to the project directory
+
+```bash
+  cd Ravn-Challenge-V2-HersonCastillo
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start:dev
+```
+
+Run tests
+
+```bash
+  npm run test
+```
 
 # Application Structure
 - Tecnologies: **Angular v12**.
@@ -117,3 +145,17 @@ And here their respective result.
   }
 }
 ```
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your environments/environment files.
+
+`GRAPHQL_ENDPOINT='https://swapi-graphql.netlify.app/.netlify/functions/index'`
+
+## 🚀 Thanks
+Great to see you here! \
+Feel free to come back again!
+
+## Authors
+
+- [@HersonCastillo](https://www.github.com/HersonCastillo)
