@@ -1,7 +1,9 @@
 <div class="character-cell__container" (click)="onCharacterClick()" [ngClass]="{ 'is-selected': isSelected }">
   <div class="character-cell__content">
-    <p>{{ character?.name }}</p>
-    <p>{{ character?.species?.name || 'Specie not defined' }} from {{ character?.homeworld?.name || 'not defined' }}</p>
+    <p class="character-cell__content__name">{{ character?.name }}</p>
+    <p class="character-cell__content__specie">
+      {{ character?.species?.name || 'Specie not defined' }} from {{ character?.homeworld?.name || 'not defined' }}
+    </p>
   </div>
   <span class="character-cell__arrow">
     &rsaquo;
